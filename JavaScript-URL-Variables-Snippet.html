@@ -1,0 +1,40 @@
+<script type="text/javascript">
+
+var query = window.location.search.substring(1);
+
+//alert(query);
+
+var paramList = query.split('&');
+
+for (var i=0; i < paramList.length; i++)
+{
+	var param = paramList[i].split('=');
+
+	//alert (param[0] + ' - ' + param[1]);
+
+	//change this to name of your URL variable
+	if(param[0] == 'XX')
+	{
+		//change this to ID of target element
+		var element = document.getElementById('XX');
+
+		if (element)
+		{
+			for (var j=0; j < element.options.length; j++)
+			{
+				//alert('option ' + j + "; " + element.options[j].text);
+
+				if (element.options[j].text == decodeURIComponent(param[1])
+				{
+					//alert(element.options[j].text);
+
+					element.options[j].selected = true;
+
+					break;
+				}
+			}
+		}
+	}
+}
+
+</script>
